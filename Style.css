@@ -1,0 +1,211 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f0c1b;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Colorful Animated Background Elements */
+.background-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #ff007f, #7f00ff, #00f0ff);
+    filter: blur(150px);
+    opacity: 0.4;
+    z-index: -1;
+    border-radius: 50%;
+    animation: floatGlow 10s infinite alternate ease-in-out;
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(-10%, -10%) scale(1); }
+    100% { transform: translate(10%, 10%) scale(1.2); }
+}
+
+/* Glassmorphism Container */
+.container {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px rgba(255, 255, 255, 0.1) solid;
+    padding: 40px 30px;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 650px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* Header Text Styles */
+header .logo-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #ffffff, #a1a1a1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff3366, #ff00cc, #33ccff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255, 0, 204, 0.2);
+}
+
+/* Badges Setup */
+.badge-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.badge {
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+}
+
+.update-badge {
+    background: rgba(255, 71, 87, 0.2);
+    color: #ff4757;
+    border: 1px solid rgba(255, 71, 87, 0.4);
+}
+
+.device-badge {
+    background: rgba(46, 213, 115, 0.2);
+    color: #2ed573;
+    border: 1px solid rgba(46, 213, 115, 0.4);
+}
+
+/* Buttons Styling */
+.btn-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 25px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-align: left;
+}
+
+.btn-content i {
+    font-size: 1.6rem;
+}
+
+.btn-content h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.btn-content p {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Hover Global Animation */
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* Custom Colors for each Button */
+.btn-main {
+    background: linear-gradient(135deg, #7f00ff, #ff007f);
+    border: none;
+    box-shadow: 0 0 20px rgba(255, 0, 127, 0.3);
+}
+.btn-main .icon-large {
+    font-size: 2rem;
+}
+
+.btn-secondary {
+    background: rgba(0, 168, 255, 0.1);
+    border-color: rgba(0, 168, 255, 0.3);
+}
+.btn-secondary:hover {
+    background: #00a8ff;
+}
+
+.btn-dark {
+    background: rgba(255, 255, 255, 0.05);
+}
+.btn-dark:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-whatsapp {
+    background: rgba(46, 213, 115, 0.1);
+    border-color: rgba(46, 213, 115, 0.3);
+}
+.btn-whatsapp:hover {
+    background: #2ed573;
+    box-shadow: 0 0 20px rgba(46, 213, 115, 0.4);
+}
+
+/* Pulsing effect for Main Tool */
+.animate-pulse {
+    animation: pulsing 2s infinite;
+}
+
+@keyframes pulsing {
+    0% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 0, 127, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 0, 127, 0); }
+}
+
+/* Footer */
+footer {
+    margin-top: 35px;
+    font-size: 0.8rem;
+    opacity: 0.4;
+  }
+
